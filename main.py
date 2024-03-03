@@ -5,9 +5,9 @@ import pickle as pickle
 
 
 # Load the pre-trained model and standardization scaler
-model = pickle.load(open("/Users/vedvasu/Downloads/TMC/lightgbm_model.pkl", "rb"))
-scaler = pickle.load(open("/Users/vedvasu/Downloads/TMC/scaler.pkl", "rb"))
-onehot_encoder = pickle.load(open("/Users/vedvasu/Downloads/TMC/onehot_encoder.pkl", "rb"))
+model = pickle.load(open("lightgbm_model.pkl", "rb"))
+scaler = pickle.load(open("scaler.pkl", "rb"))
+onehot_encoder = pickle.load(open("onehot_encoder.pkl", "rb"))
 
 # Define numerical and categorical features
 numerical_features = ['AGE_random', 'BMI_DETAILS_random', 'BILIRUBIN_CONJUGATED_random',
@@ -19,7 +19,7 @@ categorical_features = ['Thyroidism', 'HTN', 'Family_cancer_history', 'ECOG_fina
                         'Mets_site_final', 'Surgery_final', 'Treatment_final', 'GENDER', 'Diabetes_final']
 
 def get_clean_data():
-    data = pd.read_excel("/Users/vedvasu/Downloads/TMC/sem2_working_gbc_clean_final.xlsx")
+    data = pd.read_excel("sem2_working_gbc_clean_final.xlsx")
     return data
 
 def plot_numerical_feature_variation(data, feature):
